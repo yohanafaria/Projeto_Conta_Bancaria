@@ -4,7 +4,7 @@ exports.main = main;
 exports.sobre = sobre;
 var readlinesync = require("readline-sync");
 var Colors_1 = require("./src/util/Colors");
-var conta_1 = require("./src/model/conta");
+var conta_1 = require("./src/model/Conta");
 function main() {
     var opcao;
     var conta = new conta_1.Conta(1, 123, 1, "Adriana", 10000);
