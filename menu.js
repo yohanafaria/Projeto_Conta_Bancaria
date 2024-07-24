@@ -1,22 +1,20 @@
-import readlinesync = require("readline-sync");
-import { colors } from "./src/util/Colors";
-import { Conta } from "./src/model/conta";
-
-export function main(){
-    let opcao: number;
-    
-    const conta: Conta = new Conta(1, 123, 1, "Adriana", 10000);
-    
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.main = main;
+exports.sobre = sobre;
+var readlinesync = require("readline-sync");
+var Colors_1 = require("./src/util/Colors");
+var conta_1 = require("./src/model/conta");
+function main() {
+    var opcao;
+    var conta = new conta_1.Conta(1, 123, 1, "Adriana", 10000);
     conta.visualizar();
     conta.sacar(10500);
     conta.visualizar();
     conta.depositar(5000);
     conta.visualizar();
-    
-    while (true){
-        
-        console.log(colors.bg.black, colors.fg.yellow,
-            "*****************************************************");
+    while (true) {
+        console.log(Colors_1.colors.bg.black, Colors_1.colors.fg.yellow, "*****************************************************");
         console.log("                                                     ");
         console.log("                BANCO DO BRAZIL COM Z                ");
         console.log("                                                     ");
@@ -33,90 +31,64 @@ export function main(){
         console.log("            9 - Sair                                 ");
         console.log("                                                     ");
         console.log("*****************************************************");
-        console.log("                                                     ",
-             colors.reset);
-
+        console.log("                                                     ", Colors_1.colors.reset);
         console.log("Entre com a opção desejada: ");
         opcao = readlinesync.questionInt("");
-
         if (opcao == 9) {
             console.log("\nBanco do Brazil com Z - O seu Futuro começa aqui!");
             sobre();
             process.exit(0);
         }
-
         switch (opcao) {
             case 1:
-                console.log(colors.fg.whitestrong, 
-                    "\n\nCriar Conta\n\n", colors.reset);
-                
-                keyPress()
+                console.log(Colors_1.colors.fg.whitestrong, "\n\nCriar Conta\n\n", Colors_1.colors.reset);
+                keyPress();
                 break;
             case 2:
-                console.log(colors.fg.whitestrong, 
-                    "\n\nListar todas as Contas\n\n", colors.reset);
-
-                keyPress()
+                console.log(Colors_1.colors.fg.whitestrong, "\n\nListar todas as Contas\n\n", Colors_1.colors.reset);
+                keyPress();
                 break;
             case 3:
-                console.log(colors.fg.whitestrong, 
-                    "\n\nConsultar dados da Conta - por número\n\n", colors.reset);
-
-                keyPress()
+                console.log(Colors_1.colors.fg.whitestrong, "\n\nConsultar dados da Conta - por número\n\n", Colors_1.colors.reset);
+                keyPress();
                 break;
             case 4:
-                console.log(colors.fg.whitestrong, 
-                    "\n\nAtualizar dados da Conta\n\n", colors.reset);
-
-                keyPress()
+                console.log(Colors_1.colors.fg.whitestrong, "\n\nAtualizar dados da Conta\n\n", Colors_1.colors.reset);
+                keyPress();
                 break;
             case 5:
-                console.log(colors.fg.whitestrong, 
-                    "\n\nApagar uma Conta\n\n", colors.reset);
-
-                keyPress()
+                console.log(Colors_1.colors.fg.whitestrong, "\n\nApagar uma Conta\n\n", Colors_1.colors.reset);
+                keyPress();
                 break;
             case 6:
-                console.log(colors.fg.whitestrong, 
-                    "\n\nSaque\n\n", colors.reset);
-
-                keyPress()
+                console.log(Colors_1.colors.fg.whitestrong, "\n\nSaque\n\n", Colors_1.colors.reset);
+                keyPress();
                 break;
             case 7:
-                console.log(colors.fg.whitestrong, 
-                    "\n\nDepósito\n\n", colors.reset);
-
-                keyPress()
+                console.log(Colors_1.colors.fg.whitestrong, "\n\nDepósito\n\n", Colors_1.colors.reset);
+                keyPress();
                 break;
             case 8:
-                console.log(colors.fg.whitestrong, 
-                    "\n\nTransferência entre Contas\n\n", colors.reset);
-
-                keyPress()
+                console.log(Colors_1.colors.fg.whitestrong, "\n\nTransferência entre Contas\n\n", Colors_1.colors.reset);
+                keyPress();
                 break;
             default:
-                console.log(colors.fg.whitestrong, 
-                    "\nOpção Inválida!\n", colors.reset);
-
-                keyPress()
+                console.log(Colors_1.colors.fg.whitestrong, "\nOpção Inválida!\n", Colors_1.colors.reset);
+                keyPress();
                 break;
         }
     }
-
 }
-
 // Função com os dados da pessoa desenvolvedora
-
-export function sobre(): void {
+function sobre() {
     console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: ");
     console.log("Yohana Faria - yohanafaria@icloud.com");
     console.log("github.com/yohanafaria");
     console.log("*****************************************************");
 }
-
-function keyPress(): void {
-    console.log(colors.reset, "");
+function keyPress() {
+    console.log(Colors_1.colors.reset, "");
     console.log("\nPressione enter para continuar...");
     readlinesync.prompt();
 }
